@@ -8,8 +8,6 @@ import Signup from "./pages/Signup"
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
@@ -27,7 +25,7 @@ function App() {
 
 
   return (
-   <div className="min-h-screen  flex flex-col font-inter">
+   <div className="min-h-screen  flex flex-col font-inter  bg-richblack-900">
    
     <Navbar/>
     <Routes>
@@ -75,16 +73,6 @@ function App() {
             </OpenRoute>
           }
         />  
-
-    <Route
-          path="about"
-          element={
-            <OpenRoute>
-              <About />
-            </OpenRoute>
-          }
-        />
-    <Route path="/contact" element={<Contact />} />
 
     <Route 
       element={

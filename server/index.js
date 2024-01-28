@@ -14,9 +14,9 @@ const path = require('path')
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
-//database connect
+
 database.connect();
-//middlewares
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -32,38 +32,12 @@ app.use(
 		tempFileDir:"/tmp",
 	})
 )
-//cloudinary connection
+
 cloudinaryConnect();
 
-//routes
+
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
-// app.use("/api/v1/course", courseRoutes);
-// app.use("/api/v1/payment", paymentRoutes);
-// app.use("/api/v1/reach", contactUsRoute);
-
-//def route
-
-
-//Todo Routes
-//import routes for TODO API
-const todoRoutes = require("./routes/todos");
-
-
-//multer
-// app.use(bodyParser.urlencoded({extended:true}));
-// app.use(express.static(path.resolve(__dirname,'public')));
-const userdata= require('./routes/UserUploadData')
-app.use('/api/v1/userUploadData', userdata);
-
-
-
-
-
-
-//mount the todo API routes
-app.use("/api/v1", todoRoutes);
-
 
 
 
